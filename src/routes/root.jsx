@@ -1,4 +1,4 @@
-import { Outlet, Link, useLoaderData, useNavigation, Form, redirect, NavLink } from 'react-router-dom';
+import { Outlet, Link, useLoaderData, useSubmit, useNavigation, Form, redirect, NavLink } from 'react-router-dom';
 import { getContacts, createContact } from '../contacts';
 import { useEffect } from 'react';
 
@@ -17,6 +17,7 @@ export async function action() {
 export default function Root() {
 	const { contacts, q } = useLoaderData();
 	const navigation = useNavigation();
+	const submit = useSubmit();
 
 	useEffect(() => {
 		document.getElementById('q').value = q;
@@ -27,7 +28,17 @@ export default function Root() {
 			<div className="sidebar">
 				<div className="search-container">
 					<Form id="search-form" role="search">
-						<input className="search-input" placeholder="Search" type="search" id="q" name="q" defaultValue={q}></input>
+						<input
+							className="search-input"
+							placeholder="Search"
+							type="search"
+							id="q"
+							name="q"
+							defaultValue={q}
+							onChange={event => {
+								submit(event.currentTarget.form);
+							}}
+						></input>
 					</Form>
 					<Form method="post">
 						<button className="new-button" type="submit">
