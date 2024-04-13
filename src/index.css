@@ -28,6 +28,7 @@ button {
 button {
 	cursor: pointer;
 	color: white;
+	font-weight: 600;
 }
 
 .root-container {
@@ -159,4 +160,43 @@ li {
 .delete-btn {
 	width: 5rem;
 	background-color: red;
+}
+
+/* CONTACT FORM */
+
+.contact-form {
+	display: flex;
+	flex-direction: column;
+	max-width: 40rem;
+	margin: 1rem;
+}
+
+.label {
+	display: flex;
+	flex-direction: row;
+	gap: 1rem;
+	align-items: flex-start;
+	margin: 1rem 0;
+}
+
+.label > span {
+	min-width: 6rem;
+	margin-top: 0.5rem;
+}
+
+.label input {
+	width: 100%;
+}
+
+.label textarea {
+	width: 100%;
+}
+
+.save-btn {
+	width: 5rem;
+	color: blue;
+}
+.cancel-btn {
+	width: 5rem;
+	color: black;
 }

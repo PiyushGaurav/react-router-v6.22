@@ -37,8 +37,24 @@ export default function Contact() {
 				{contact.notes && <p>{contact.notes}</p>}
 
 				<div className="btn-container">
-					<button className="edit-btn">Edit</button>
-					<button className="delete-btn">Delete</button>
+					<Form action="edit">
+						<button className="edit-btn" type="submit">
+							Edit
+						</button>
+					</Form>
+					<Form
+						method="post"
+						action="destroy"
+						onSubmit={event => {
+							if (!confirm('Please confirm you want to delete this record.')) {
+								event.preventDefault();
+							}
+						}}
+					>
+						<button className="delete-btn" type="submit">
+							Delete
+						</button>
+					</Form>
 				</div>
 			</div>
 		</div>
