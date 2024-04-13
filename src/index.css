@@ -90,11 +90,23 @@ li {
 	color: inherit;
 	padding: 0.5rem;
 	display: block;
+	transition: all 0.3s ease-in-out;
 }
 
 .navlink-title:hover {
+	transform: scale(1.01);
+	color: white;
+	background-color: rgb(197, 135, 197);
+}
+
+.active {
 	color: white;
 	background-color: purple;
+}
+
+.pending {
+	color: white;
+	background-color: rgb(197, 135, 197);
 }
 
 .detail {
@@ -111,6 +123,7 @@ li {
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
+	width: 100%;
 }
 
 .error-page p {
